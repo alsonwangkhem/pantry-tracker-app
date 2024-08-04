@@ -17,7 +17,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import DisplayPantries from '@/components/DisplayPantries';
 
 // define collection name for the database
-export const PANTRY_COLLECTION = 'pantry_items';
+const PANTRY_COLLECTION = 'pantry_items';
 
 function Dashboard() {
   const router = useRouter();

@@ -5,9 +5,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Paper, Table, TableContainer, TableHead, TableRow, TableBody, TableCell, IconButton, Dialog, DialogTitle, DialogContent, TextField, DialogActions, Button, } from "@mui/material"
 import { useState } from "react";
 import { db } from "@/firebase";
-import { PANTRY_COLLECTION } from "@/app/dashboard/page";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+const PANTRY_COLLECTION = 'pantry_items';
 
 function DisplayPantries({ pantryItems, fetchPantryItems }: { pantryItems: PantryItem[], fetchPantryItems: (userId: string) => void }) {
     const [open, setOpen] = useState(false);
