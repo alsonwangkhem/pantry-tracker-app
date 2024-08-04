@@ -101,14 +101,10 @@ function Dashboard() {
       console.error('Error adding item:', error);
     }
   };
-  
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <div className="h-screen">
-      <div className="my-8 text-right max-w-7xl"><Button variant="outlined" color="error" onClick={handleSignout}>Sign out</Button></div>
-      <div className="my-8 text-center max-w-7xl flex items-center justify-center mx-auto space-x-6">
+      <div className="my-8 text-right mr-5 md:max-w-7xl"><Button variant="outlined" color="error" onClick={handleSignout}>Sign out</Button></div>
+      <div className="my-8 text-center max-w-7xl flex flex-col space-y-4 md:flex-row items-center justify-center mx-auto space-x-6">
         <TextField id="standard-basic" label="Item name" variant="standard" value={itemName}
         onChange={(e) => setItemName(e.target.value)} />
         <QuantityInput quantity={quantity} setQuantity={setQuantity} ></QuantityInput>
@@ -119,11 +115,6 @@ function Dashboard() {
       </div>
       {/* main body */}
       <DisplayPantries pantryItems={pantryItems} fetchPantryItems={(userId: string) => fetchPantryItems(userId)} />
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity="success">
-        This is a success message!
-      </Alert>
-    </Snackbar>
     </div>
   )
 }

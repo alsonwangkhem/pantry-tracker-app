@@ -53,7 +53,7 @@ function DisplayPantries({ pantryItems, fetchPantryItems }: { pantryItems: Pantr
     }
   return (
     <div>
-        <TableContainer component={Paper} elevation={24} className="flex flex-col items-center h-[70%] w-[60%] mx-auto">
+        <TableContainer component={Paper} elevation={24} className="flex flex-col items-center h-[90%] w-[90%] md:h-[70%] md:w-[60%] mx-auto">
             <Table>
               <TableHead>
                 <TableRow>
