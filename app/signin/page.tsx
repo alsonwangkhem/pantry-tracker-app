@@ -54,30 +54,6 @@ function Signup() {
       router.push('/dashboard');
   };
 
-  const handleGoogle = () => {
-    setLoading(true);
-    setError("");
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        if (credential) {
-          const token = credential.accessToken;
-        } else {
-          console.error("No credential found");
-          alert("Error occurred while signing in. Please try again with correct credentials.");
-          setLoading(false);
-          return;
-        }
-        const user = result.user;
-        setLoading(false);
-        
-      })
-      .catch((error) => {
-        setLoading(false);
-        setError(error.message);
-      });
-      router.push('/dashboard');
-  };
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -117,14 +93,7 @@ function Signup() {
         >
           {loading ? "Logging in..." : "Log in"}
         </Button>
-        <Button 
-          variant="outlined" 
-          onClick={handleGoogle} 
-          disabled={loading}
-          sx={{ mt: 2, display: 'flex', alignItems: 'center' }}
-        >
-          <GoogleIcon sx={{ mr: 1 }} /> Continue with Google
-        </Button>
+        
         <Button onClick={() => router.push('/signup')}>Don&apos;t have an account yet? Sign up</Button>
       </Paper>
     </div>
